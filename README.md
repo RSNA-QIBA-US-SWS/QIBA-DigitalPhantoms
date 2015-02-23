@@ -1,5 +1,10 @@
 # QIBA-DigitalPhantoms
 RSNA QIBA Digital Phantom Studies
+(http://qibawiki.rsna.org/index.php?title=Ultrasound_SWS_tech_ctte)
+
+This repository contains the parameters and simulation configuration files used
+for the digital phantom datasets that will be circulated to all of the
+manufacturers.
 
 ## Curvilinear Probe Parameters
 * Radius of curvature: 60 mm
@@ -28,6 +33,7 @@ RSNA QIBA Digital Phantom Studies
 * 15 mm of total lateral extent
 * Just axial components of displacements
 * Just imaging plane displacements
+* MATLAB-formatted data will be shared
 
 ## Mesh Dimensions & Configurations
 * ¼ symmetry
@@ -40,3 +46,8 @@ RSNA QIBA Digital Phantom Studies
 ## Future Efforts
 * Ultrasonic tracking configurations and realizations
 * Viscoelastic material definitions
+
+## Contributors
+* Dr. Shigao Chen, Ph.D.
+* Dr. Mark Palmeri, M.D., Ph.D.
+* Dr. Matthew Urban, Ph.D.
