@@ -50,5 +50,5 @@ manufacturers.
 ## Contributors
 * Dr. Shigao Chen, Ph.D.
 * Dr. Mark Palmeri, M.D., Ph.D.
-* Dr. Bo Qiang, Ph.D.
+* Bo Qiang, MSEE
 * Dr. Matthew Urban, Ph.D.
