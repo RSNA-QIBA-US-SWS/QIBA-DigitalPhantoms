@@ -25,7 +25,7 @@ manufacturers.
 * Linear
 
 ## Elastic Material Properties
-* Poisson’s ratio: 0.499
+* Poisson’s ratio: 0.495
 * Shear modulus: [1.0, 2.0, 5.0, 10.0] kPa
 
 ## Misc. Parameters
@@ -37,10 +37,10 @@ manufacturers.
 
 ## Mesh Dimensions & Configurations
 * ¼ symmetry
-* 0.1 mm node spacing
+* 0.25 mm node spacing
 * 10 mm elevation
 * 25 mm laterally
-* XX mm axially (not sure yet)
+* Focal depth + 25 mm axially
 * PMLs on outer lateral/elevation faces and top/bottom
 
 ## Future Efforts
