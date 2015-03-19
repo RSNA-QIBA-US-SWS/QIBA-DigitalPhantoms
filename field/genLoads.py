@@ -15,10 +15,11 @@ import shutil
 # define some stuff
 Freq = [3.0]
 Fnum = [2.0, 3.5]
-FD = [0.030, 0.050, 0.070]
+FD = [0.070, 0.050, 0.030]  # done in reverse order for normalization case to
+                            # be generated first
 alpha = [0.45]
 
-root = '/home/mlp6/Documents/QIBA/DigitalPhantoms/field'
+root = '/radforce/fem/QIBA-DigitalPhantoms/field'
 
 SGE_TEMPLATE = 'genLoadsSGE.py'
 
@@ -37,6 +38,6 @@ for i in range(len(Freq)):
                                    (Fnum[j], FD[k], Freq[i], alpha[l])
                     os.system('sed -i -e "s/PARAM_STRING/%s/" %s' %
                               (PARAM_STRING, SGE_FILENAME))
-                    os.system('qsub %s' % (SGE_FILENAME))
+                    # os.system('qsub %s' % (SGE_FILENAME))
                 else:
                     print('%s ALREADY EXISTS!!' % datafile)
