@@ -52,3 +52,10 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# ls-dyna input deck files
+node*.dyn
+elem*.dyn
+bc*.dyn
+PointLoads*.dyn
+dyna-I-*.mat
