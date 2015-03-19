@@ -15,7 +15,7 @@ FEMGIT = '/home/mlp6/git/fem'
 # all units are CGS
 focalDepths = [3.0, 5.0, 7.0]
 nodeSpacing = 0.025
-axialExtent = 1.5 # ratio of focal depth to extent the mesh in depth
+axialExtent = 1.5  # ratio of focal depth to extent the mesh in depth
 
 for fd in focalDepths:
 
