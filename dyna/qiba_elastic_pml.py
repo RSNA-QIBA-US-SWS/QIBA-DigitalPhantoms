@@ -61,6 +61,6 @@ for YM in YoungsModuli:
                               )
                     os.system('cp %s/dyna/%s .' % (root, sgeFile))
 
-                    # os.system('qsub --bash %s' % (sgeFile))
+                    os.system('qsub --bash %s' % (sgeFile))
                 else:
                     print('res_sim.mat already exists')
