@@ -15,7 +15,9 @@ FEMGIT = '/home/mlp6/git/fem'
 # all units are CGS
 focalDepths = [3.0, 5.0, 7.0]
 nodeSpacing = 0.025
-axialExtent = 3.0  # depth beyond the focal depth to add to mesh
+elevCM = 1.0
+latCM = 2.5
+axialCM = 10.0
 
 for fd in focalDepths:
 
@@ -25,10 +27,12 @@ for fd in focalDepths:
     os.system('python %s/mesh/GenMesh.py '
               '--nodefile %s '
               '--elefile %s '
-              '--xyz -1.0 0.0 0.0 2.5 -%.1f 0.0 '
-              '--numElem 40 100 %.f' %
-              (FEMGIT, nodefile, elemfile, (fd + axialExtent),
-               (fd + axialExtent) / nodeSpacing)
+              '--xyz -%.1f 0.0 0.0 %.1f -%.1f 0.0 '
+              '--numElem %i %i %i' %
+              (FEMGIT, nodefile, elemfile,
+               elevCM, latCM, axialCM,
+               elevCM/nodeSpacing, latCM/nodeSpacing, axialCM/nodeSpacing
+               )
               )
 
     os.system('python %s/mesh/bc.py '
