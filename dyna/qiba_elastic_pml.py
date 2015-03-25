@@ -5,10 +5,11 @@ Elastic digital phantoms for the QIBA industry comparison.
 
 Mark Palmeri
 mlp6@duke.edu
-2015-03-18
+2015-03-23
 """
 
 import os
+from math import sqrt as sqrt
 
 YoungsModuli = [3.0, 6.0, 15.0, 30.0]  # kPa
 ExcitationDurations = [167, 334]  # us, 500 and 1000 cycles @ 3 MHz
@@ -45,6 +46,9 @@ for YM in YoungsModuli:
                               )
                     os.system("sed -i -e 's/TOFF2/%.1f/' %s" %
                               (ED + 1, indyn)
+                              )
+                    os.system("sed -i -e 's/TRUN/%i/' %s" %
+                              (25 / sqrt(YM/3), indyn)
                               )
                     os.system("ln -fs %s/field/PointLoads-f3.00-"
                               "F%.1f-FD0.0%i-a0.45.dyn loads.dyn" %
