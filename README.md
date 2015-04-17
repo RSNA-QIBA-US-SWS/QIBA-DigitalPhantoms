@@ -18,7 +18,7 @@ manufacturers.
 * Frequency: 3.0 MHz
 * F/# = 2, 3.5
 * 500, 1000 cycles
-* Focal Depths: 30, 50, 70 mm (F/2 for all configurations)
+* Focal Depths: 30, 50, 70 mm
 
 ## Acoustic Material Properties
 * Attenuation: 0.45 dB/cm/MHz
