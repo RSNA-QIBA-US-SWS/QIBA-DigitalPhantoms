@@ -23,8 +23,8 @@ no_elements = (FIELD_PARAMS.focus(3) / FIELD_PARAMS.Fnum) / pitch;
 no_elements = floor(no_elements);
 
 % lens focus & probe curvature
-Rfocus = 48.8e-3;
-Rconvex = 50/1000;
+Rfocus = 50.0e-3;
+Rconvex = 60/1000;
 
 % mathematically sub-dice elements to make them ~1 lambda dimensions
 no_sub_y = 2 * height/width;
