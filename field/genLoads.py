@@ -38,6 +38,6 @@ for i in range(len(Freq)):
                                    (Fnum[j], FD[k], Freq[i], alpha[l])
                     os.system('sed -i -e "s/PARAM_STRING/%s/" %s' %
                               (PARAM_STRING, SGE_FILENAME))
-                    os.system('qsub %s' % (SGE_FILENAME))
+                    os.system('qsub --python %s' % (SGE_FILENAME))
                 else:
                     print('%s ALREADY EXISTS!!' % datafile)
