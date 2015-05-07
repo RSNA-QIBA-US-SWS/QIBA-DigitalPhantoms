@@ -19,9 +19,9 @@ FD = [0.070, 0.050, 0.030]  # done in reverse order for normalization case to
                             # be generated first
 alpha = [0.45]
 
-root = '/radforce/fem/QIBA-DigitalPhantoms/field'
+root = '/getlab/mlp6/scratch/QIBA-DigitalPhantoms/field'
 
-SGE_TEMPLATE = 'genLoadsSGE.py'
+SLURM_TEMPLATE = 'genLoads.sh'
 
 for i in range(len(Freq)):
     for j in range(len(Fnum)):
@@ -30,14 +30,14 @@ for i in range(len(Freq)):
                 datafile = '%s/dyna-I-f%.2f-F%.1f-FD%.3f-a%.2f.mat' % \
                            (root, Freq[i], Fnum[j], FD[k], alpha[l])
                 if not os.path.exists(datafile):
-                    SGE_FILENAME = datafile.replace('dyna-I-', 'field_')
-                    SGE_FILENAME = SGE_FILENAME.replace('.mat', '_SGE.py')
-                    print SGE_FILENAME
-                    shutil.copy(SGE_TEMPLATE, SGE_FILENAME)
+                    SLURM_FILENAME = datafile.replace('dyna-I-', 'field_')
+                    SLURM_FILENAME = SLURM_FILENAME.replace('.mat', '.sh')
+                    print SLURM_FILENAME
+                    shutil.copy(SLURM_TEMPLATE, SLURM_FILENAME)
                     PARAM_STRING = '%.1f, %.3f, %.2f, %.2f' % \
                                    (Fnum[j], FD[k], Freq[i], alpha[l])
                     os.system('sed -i -e "s/PARAM_STRING/%s/" %s' %
-                              (PARAM_STRING, SGE_FILENAME))
-                    os.system('qsub --python %s' % (SGE_FILENAME))
+                              (PARAM_STRING, SLURM_FILENAME))
+                    os.system('sbatch %s' % (SLURM_FILENAME))
                 else:
                     print('%s ALREADY EXISTS!!' % datafile)

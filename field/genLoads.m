@@ -18,7 +18,7 @@ normIntensityFile = 'dyna-I-f3.00-F2.0-FD0.070-a0.45.mat';
 
 makeLoadsTemps(inputIntensityFile, ...
                normIntensityFile, ...
-               1000, 500, 2.0, 0.025^3, 'q', 1);
+               1000, 500, 2.0, 0.01^3, 'q', 1);
 
 % generate VTU files for paraview
 system(sprintf('python ~/git/fem/mesh/create_pointloads_vtk.py --nodefile ../mesh/nodesFoc%imm.dyn --loadfile PointLoads-f3.00-F%.1f-FD0.0%i-a0.45.dyn --loadout nodeLoadsFoc%immF%.1f', FDmm, FNUM, FDmm, FDmm, FNUM));
