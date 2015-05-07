@@ -14,7 +14,7 @@ FEMGIT = '/home/mlp6/git/fem'
 
 # all units are CGS
 focalDepths = [3.0, 5.0, 7.0]
-nodeSpacing = 0.025
+nodeSpacing = 0.0167
 elevCM = 1.0
 latCM = 2.5
 axialCM = 10.0
