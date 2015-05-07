@@ -1,5 +1,5 @@
 #!/bin/bash
-#$ -l mem_free=1G
+#$ -l mem_free=2G
 #$ -pe smp 8 
 
 FEMGIT='/home/mlp6/git/fem'
