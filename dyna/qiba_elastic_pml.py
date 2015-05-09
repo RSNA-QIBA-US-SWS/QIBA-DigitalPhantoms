@@ -16,7 +16,7 @@ ExcitationDurations = [167, 334]  # us, 500 and 1000 cycles @ 3 MHz
 FocalDepths = [30, 50, 70]  # mm
 Fnums = [2.0, 3.5]
 
-root = '/radforce/fem/QIBA-DigitalPhantoms'
+root = '/getlab/mlp6/scratch/QIBA-DigitalPhantoms'
 femgit = '/home/mlp6/git/fem'
 indyn = 'qiba_elastic_pml.dyn'
 sgeFile = 'qiba_elastic_pml.sh'
