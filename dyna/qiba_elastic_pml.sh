@@ -1,7 +1,8 @@
 #!/bin/bash
-#SBATCH --mem=1000
+#SBATCH --mem=12000
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=48
+#SBATCH --ntasks-per-node=6
+#SBATCH --exclude=moab,wasatch
 
 FEMGIT='/home/mlp6/git/fem'
 DYNADECK='qiba_elastic_pml.dyn'
