@@ -47,8 +47,18 @@ manufacturers.
 * Ultrasonic tracking configurations and realizations
 * Viscoelastic material definitions
 
+## Quantitative Imaging Data Warehouse
+The raw simulation data for processing is available through the
+US-SWS-Digital-Phantoms community at http://qidw.rsna.org (free login
+required).
+
 ## Contributors
 * Dr. Shigao Chen, Ph.D.
 * Dr. Mark Palmeri, M.D., Ph.D.
 * Bo Qiang, MSEE
 * Dr. Matthew Urban, Ph.D.
+
+## Funding
+This work has been supported in part by RSNA QIBA, FDA contracts
+HHSF223201400703P and HHSN268201300071C, and NIH grants R01DK092255 and R01
+EB002132 .
