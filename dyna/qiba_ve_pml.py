@@ -10,21 +10,45 @@ mark.palmeri@duke.edu
 
 import os
 from math import sqrt as sqrt
+import re
 
-G0 = [X, X, X]  # kPa
-GI = [X, X, X]  # kPa
-ETA = [X, X, X]
-YoungsModuli = [x*3.0 for x in G0]  # kPa
+"""
+Measured values:
+    E2297-AX c(200) = 2.06 dc/df = 3.08
+    E2297-BX c(200) = 2.44 dc/df = 3.72
+    E2297-CX c(200) = 2.87 dc/df = 5.11
+
+Closest match VE 3-param and associated phase velocities and phase velocity slopes:
+    G_0 = 10 kPa, G_inifinity = 2 kPa, beta = 6666.7 Pa-s, c(200) = 1.91, dc/df = 3.05
+    G_0 = 15 kPa, G_infinity = 4 kPa, beta = 5500.0 Pa-s, c(200) = 2.49, dc/df = 3.49
+    G_0 = 20 kPa, G_infinity = 4 kPa, beta = 4000.0 Pa-s, c(200) = 2.91, dc/df = 5.55
+"""
+
+VE =[ {'G0' : 10, 'GI' : 2, 'BETA' : 6666.7}, 
+      {'G0' : 15, 'GI' : 4, 'BETA' : 5500.0},
+      {'G0' : 20, 'GI' : 4, 'BETA' : 4000.0}
+    ]
+
+YoungsModuli = [x['G0']*3.0 for x in VE]  # kPa
 ExcitationDurations = [167, 334]  # us, 500 and 1000 cycles @ 3 MHz
 FocalDepths = [30, 50, 70]  # mm
 Fnums = [2.0, 3.5]
 
 root = '/getlab/mlp6/scratch/QIBA-DigitalPhantoms'
 femgit = '/home/mlp6/projects/fem'
-indyn = 'qiba_ve_pml.dyn'
-sgeFile = 'qiba_ve_pml.sh'
+indynFile = 'qiba_ve_pml.dyn'
+slurmFile = 'qiba_ve_pml.sh'
 
-for YM in YoungsModuli:
+strToReplace = {
+        'YM'    :   YM * 10000.0,
+        'TOFF1' :   ED,
+        'TOFF2' :   ED + 1,
+        'TRUN'  :   25 / sqrt(YM/3)
+        }
+
+re_strToReplace = re.compile('|'.join(strToReplace.keys()))
+
+for n, YM in enumerate(YoungsModuli):
     for FD in FocalDepths:
         for ED in ExcitationDurations:
             for FN in Fnums:
@@ -40,19 +64,16 @@ for YM in YoungsModuli:
 
                 if not os.path.exists('res_sim.mat'):
                     print('\tres_sim.mat missing . . . running ls-dyna')
-                    os.system('cp %s/dyna/%s .' % (root, indyn))
-                    os.system("sed -i -e 's/YM/%.1f/' %s" %
-                              (YM * 10000.0, indyn)
-                              )
-                    os.system("sed -i -e 's/TOFF1/%.1f/' %s" %
-                              (ED, indyn)
-                              )
-                    os.system("sed -i -e 's/TOFF2/%.1f/' %s" %
-                              (ED + 1, indyn)
-                              )
-                    os.system("sed -i -e 's/TRUN/%i/' %s" %
-                              (25 / sqrt(YM/3), indyn)
-                              )
+                    
+                    indyn = open(root + '/dyna/' + indynFile, 'r')
+                    outdyn = open(indynFile, 'w')
+
+                    for i in indyn:
+                        outdyn.write(re_strToReplace.sub(lambda j: strToReplace[j.group(0)], i))
+
+                    indyn.close()
+                    outdyn.close()
+
                     os.system("ln -fs %s/field/PointLoads-f3.00-"
                               "F%.1f-FD0.0%i-a0.45.dyn loads.dyn" %
                               (root, FN, FD)
@@ -66,8 +87,8 @@ for YM in YoungsModuli:
                     os.system("ln -fs %s/mesh/bcPMLfoc%imm.dyn bc_pml.dyn" %
                               (root, FD)
                               )
-                    os.system('cp %s/dyna/%s .' % (root, sgeFile))
+                    os.system('cp %s/dyna/%s .' % (root, slurmFile))
 
-                    os.system('sbatch %s' % (sgeFile))
+                    os.system('sbatch %s' % (slurmFile))
                 else:
                     print('res_sim.mat already exists')
