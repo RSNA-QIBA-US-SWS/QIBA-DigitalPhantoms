@@ -39,22 +39,27 @@ femgit = '/home/mlp6/projects/fem'
 indynFile = 'qiba_ve_pml.dyn'
 slurmFile = 'qiba_ve_pml.sh'
 
-strToReplace = {
-        'YM'    :   YM * 10000.0,
-        'TOFF1' :   ED,
-        'TOFF2' :   ED + 1,
-        'TRUN'  :   25 / sqrt(YM/3)
-        }
-
-re_strToReplace = re.compile('|'.join(strToReplace.keys()))
 
 for n, YM in enumerate(YoungsModuli):
     for FD in FocalDepths:
         for ED in ExcitationDurations:
             for FN in Fnums:
 
-                sim_path = '%s/data/E%.1fkPa/foc%imm/F%.1f/EXCDUR_%ius/' % \
-                           (root, YM, FD, FN, ED)
+                strToReplace = {
+                        'YM'    :   YM * 10000.0,
+                        'G0'    :   VE[n]['G0'],
+                        'GI'    :   VE[n]['GI'],
+                        'BETA'  :   VE[n]['BETA'],
+                        'BULK'  :   YM * 10000.0 / (3 * (1 - 2*0.499)),
+                        'TOFF1' :   ED,
+                        'TOFF2' :   ED + 1,
+                        'TRUN'  :   25 / sqrt(YM/3)
+                        }
+
+                re_strToReplace = re.compile('|'.join(strToReplace.keys()))
+
+                sim_path = '%s/data/G0%.1fkPa/GI%.1fkPa/BETA%.1f/foc%imm/F%.1f/EXCDUR_%ius/' % \
+                           (root, VE[n]['G0'], VE[n]['GI'], VE[n]['BETA'], FD, FN, ED)
 
                 if not os.path.exists(sim_path):
                     os.makedirs(sim_path)
