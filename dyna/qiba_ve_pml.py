@@ -45,14 +45,14 @@ for n, YM in enumerate(YoungsModuli):
             for FN in Fnums:
 
                 strToReplace = {
-                    'YM': YM * 10000.0,
-                    'G0': VE[n]['G0'],
-                    'GI': VE[n]['GI'],
-                    'BETA': VE[n]['BETA'],
-                    'BULK': YM * 10000.0 / (3 * (1 - 2 * 0.499)),
-                    'TOFF1': ED,
-                    'TOFF2': ED + 1,
-                    'TRUN': 25 / sqrt(YM / 3)
+                    'YM': '%.1f' % (YM * 10000.0),
+                    'G0': '%.1f' % (VE[n]['G0']),
+                    'GI': '%.1f' % (VE[n]['GI']),
+                    'BETA': '%.1f' % (VE[n]['BETA']),
+                    'BULK': '%.1f' % (YM * 10000.0 / (3 * (1 - 2 * 0.499))),
+                    'TOFF1': '%.1f' % ED,
+                    'TOFF2': '%.1f' % (ED + 1),
+                    'TRUN': '%.1f' % (25 / sqrt(YM / 3))
                 }
 
                 re_strToReplace = re.compile('|'.join(strToReplace.keys()))
