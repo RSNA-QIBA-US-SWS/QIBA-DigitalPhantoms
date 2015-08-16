@@ -34,7 +34,7 @@ ExcitationDurations = [167, 334]  # us, 500 and 1000 cycles @ 3 MHz
 FocalDepths = [30, 50, 70]  # mm
 Fnums = [2.0, 3.5]
 
-root = '/getlab/mlp6/scratch/QIBA-DigitalPhantoms'
+root = '/pisgah/mlp6/scratch/QIBA-DigitalPhantoms'
 femgit = '/home/mlp6/projects/fem'
 indynFile = 'qiba_ve_pml.dyn'
 slurmFile = 'qiba_ve_pml.sh'
