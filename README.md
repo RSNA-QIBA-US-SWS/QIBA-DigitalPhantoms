@@ -1,6 +1,5 @@
 # QIBA-DigitalPhantoms
-RSNA QIBA Digital Phantom Studies
-(http://qibawiki.rsna.org/index.php?title=Ultrasound_SWS_tech_ctte)
+[RSNA QIBA Digital Phantom Studies](http://qibawiki.rsna.org/index.php?title=Ultrasound_SWS_tech_ctte)
 
 This repository contains the parameters and simulation configuration files used
 for the digital phantom datasets that will be circulated to all of the
@@ -27,6 +26,17 @@ manufacturers.
 ## Elastic Material Properties
 * Poisson’s ratio: 0.495
 * Shear modulus: [1.0, 2.0, 5.0, 10.0] kPa
+* LS-DYNA Input Deck: ```dyna/qiba_elastic_pml.dyn```
+* LS-DYNA Run Script: ```dyna/qiba_elastic_pml.py```
+* ABAQUS Input Files: ```abaqus/```
+
+## Viscoelastic Material Properties
+* G_0 = 10 kPa, G_infinity = 2 kPa, beta = 6666.7 Pa-s
+* G_0 = 15 kPa, G_infinity = 4 kPa, beta = 5500.0 Pa-s
+* G_0 = 20 kPa, G_infinity = 4 kPa, beta = 4000.0 Pa-s 
+* LS-DYNA Input Deck: ```dyna/qiba_ve_pml.dyn```
+* LS-DYNA Run Script: ```dyna/qiba_ve_pml.py```
+* FEBio Input File: ```febio/phantom1_200Hz_case1.feb```
 
 ## Misc. Parameters
 * Displacement data in the imaging plane saved at 0.1 mm spacing every 0.1 ms.
@@ -45,20 +55,20 @@ manufacturers.
 
 ## Future Efforts
 * Ultrasonic tracking configurations and realizations
-* Viscoelastic material definitions
 
 ## Quantitative Imaging Data Warehouse
 The raw simulation data for processing is available through the
-US-SWS-Digital-Phantoms community at http://qidw.rsna.org (free login
-required).
+[US-SWS-Digital-Phantoms community](http://qidw.rsna.org/community/14) (free
+login required).
 
 ## Contributors
 * Dr. Shigao Chen, Ph.D.
 * Dr. Mark Palmeri, M.D., Ph.D.
 * Bo Qiang, MSEE
 * Dr. Matthew Urban, Ph.D.
+* Dr. Jingfeng Jiang, Ph.D.
 
 ## Funding
 This work has been supported in part by RSNA QIBA, FDA contracts
 HHSF223201400703P and HHSN268201300071C, and NIH grants R01DK092255 and R01
-EB002132 .
+EB002132.
