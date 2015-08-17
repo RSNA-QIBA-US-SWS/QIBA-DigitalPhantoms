@@ -1,0 +1,10 @@
+*Material, name=MaterialPhantom
+*Density
+1.000000E+03,
+*Elastic
+2.990000E+04, 4.950000E-01
+*Material, name=MaterialBoundary
+*Density
+1.000000E+03,
+*Elastic
+2.990000E+04, 4.950000E-01

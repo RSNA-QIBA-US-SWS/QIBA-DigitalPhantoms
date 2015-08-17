@@ -1,0 +1,2 @@
+abaqus terminate job=Foc30mmF2p0_E30k_T167
+pause

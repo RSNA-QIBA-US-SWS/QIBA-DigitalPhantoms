@@ -1,0 +1,26 @@
+*Include, input=part.inp
+*Assembly, name=AssemblyPhantom
+*Instance, name=InstancePhantom, part=PartPhantom
+*End Instance
+*End Assembly
+*Section Controls, name=EC, hourglass=ENHANCED
+*Include, input=material.inp
+*Include, input=amplitude.inp
+*Include, input=timepoints.inp
+*Step
+*Dynamic, explicit
+, 2.500000E-02
+*Bulk Viscosity
+0.06, 1.2
+*Boundary
+InstancePhantom.XSymmNode, XSYMM
+*Boundary
+InstancePhantom.YSymmNode, YSYMM
+*Boundary
+InstancePhantom.topNode, PINNED
+*Include, input=load.inp
+*Output, field, time points=TimePoints, time marks=YES
+*Node Output, nset=InstancePhantom.CenterPlaneNode
+U, V
+*Output, history, frequency=0
+*End Step
