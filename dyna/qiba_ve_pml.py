@@ -59,7 +59,7 @@ for n, YM in enumerate(YoungsModuli):
                 re_strToReplace = re.compile('|'.join(strToReplace.keys()))
 
                 sim_path = '%s/data/G0%.1fkPa/GI%.1fkPa/BETA%.1f/foc%imm/F%.1f/EXCDUR_%ius/' % \
-                           (root, VE[n]['G0'], VE[n]['GI'], VE[n]['BETA'], FD, FN, ED)
+                           (root, VE[n]['G0']/1e4, VE[n]['GI']/1e4, VE[n]['BETA']/10, FD, FN, ED)
 
                 if not os.path.exists(sim_path):
                     os.makedirs(sim_path)
