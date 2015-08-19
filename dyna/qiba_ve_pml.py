@@ -53,7 +53,7 @@ for n, YM in enumerate(YoungsModuli):
                     'BULK': '%.1f' % (YM / (3 * (1 - 2 * 0.495))),
                     'TOFF1': '%.1f' % ED,
                     'TOFF2': '%.1f' % (ED + 1),
-                    'TRUN': '%.1f' % (25 / sqrt(YM / 3))
+                    'TRUN': '%.1f' % (25 / sqrt(YM / (3 * 1e4)))
                 }
 
                 re_strToReplace = re.compile('|'.join(strToReplace.keys()))
