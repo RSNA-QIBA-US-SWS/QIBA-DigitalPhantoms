@@ -49,7 +49,7 @@ for n, YM in enumerate(YoungsModuli):
                     'G0': '%.1f' % (VE[n]['G0']),
                     'GI': '%.1f' % (VE[n]['GI']),
                     'BETA': '%.1f' % (VE[n]['BETA']),
-                    'BULK': '%.1f' % (YM * 10000.0 / (3 * (1 - 2 * 0.499))),
+                    'BULK': '%.1f' % (YM * 10000.0 / (3 * (1 - 2 * 0.495))),
                     'TOFF1': '%.1f' % ED,
                     'TOFF2': '%.1f' % (ED + 1),
                     'TRUN': '%.1f' % (25 / sqrt(YM / 3))
