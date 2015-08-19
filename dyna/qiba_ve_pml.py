@@ -24,9 +24,10 @@ Closest match VE 3-param and associated phase velocities and phase velocity slop
     G_0 = 20 kPa, G_infinity = 4 kPa, beta = 4000.0 Pa-s, c(200) = 2.91, dc/df = 5.55
 """
 
-VE = [{'G0': 10, 'GI': 2, 'BETA': 6666.7},
-      {'G0': 15, 'GI': 4, 'BETA': 5500.0},
-      {'G0': 20, 'GI': 4, 'BETA': 4000.0}
+# convert all of these to cgs units
+VE = [{'G0': 10*1e4, 'GI': 2*1e4, 'BETA': 6666.7*10},
+      {'G0': 15*1e4, 'GI': 4*1e4, 'BETA': 5500.0*10},
+      {'G0': 20*1e4, 'GI': 4*1e4, 'BETA': 4000.0*10}
       ]
 
 YoungsModuli = [x['G0'] * 3.0 for x in VE]  # kPa
