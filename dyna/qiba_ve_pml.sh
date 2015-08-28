@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --mem=24000
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=12
+#SBATCH --ntasks-per-node=24
 
 FEMGIT='/home/mlp6/projects/fem'
 DYNADECK='qiba_ve_pml.dyn'
