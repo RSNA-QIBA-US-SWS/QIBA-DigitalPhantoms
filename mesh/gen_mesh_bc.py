@@ -10,7 +10,7 @@ mlp6@duke.edu
 
 import os
 
-FEMGIT = '/home/mlp6/git/fem'
+FEMGIT = '/home/mlp6/projects/fem'
 
 # all units are CGS
 focalDepths = [3.0, 5.0, 7.0]
@@ -35,10 +35,10 @@ for fd in focalDepths:
                )
               )
 
-    os.system('python %s/mesh/bc.py '
-              '--pml '
-              '--nodefile %s '
-              '--elefile %s '
-              '--bcfile bcPMLfoc%.fmm.dyn' %
-              (FEMGIT, nodefile, elemfile, fd*10)
-              )
+    #os.system('python %s/mesh/bc.py '
+    #          '--pml '
+    #          '--nodefile %s '
+    #          '--elefile %s '
+    #          '--bcfile bcPMLfoc%.fmm.dyn' %
+    #          (FEMGIT, nodefile, elemfile, fd*10)
+    #          )
