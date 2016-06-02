@@ -59,3 +59,5 @@ elem*.dyn
 bc*.dyn
 PointLoads*.dyn
 dyna-I-*.mat
+
+*ipynb_checkpoints
