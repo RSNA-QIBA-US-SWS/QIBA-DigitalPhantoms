@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/31222567.svg)](https://zenodo.org/badge/latestdoi/31222567)
+
 # QIBA-DigitalPhantoms
 [RSNA QIBA Digital Phantom Studies](http://qibawiki.rsna.org/index.php?title=Ultrasound_SWS_tech_ctte)
 
