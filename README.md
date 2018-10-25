@@ -59,9 +59,9 @@ manufacturers.
 * Ultrasonic tracking configurations and realizations
 
 ## Quantitative Imaging Data Warehouse
-The raw simulation data for processing is available through the
-[US-SWS-Digital-Phantoms community](http://qidw.rsna.org/community/14) (free
-login required).
+The raw simulation data for processing is available through the Duke University
+Library Digital Research Data Repository: [QIBA Ultrasound Shear Wave Speed
+Digital Phantoms](https://doi.org/10.7924/r4sj1f98c)
 
 ## Contributors
 * Dr. Shigao Chen, Ph.D.
