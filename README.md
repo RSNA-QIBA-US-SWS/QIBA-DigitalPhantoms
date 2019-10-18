@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/31222567.svg)](https://zenodo.org/badge/latestdoi/31222567)
+[![DOI](https://zenodo.org/badge/31222567.svg)](https://zenodo.org/badge/latestdoi/31222567) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # QIBA-DigitalPhantoms
 RSNA QIBA wiki overview of [US SWS Digital Phantom Studies](http://qibawiki.rsna.org/index.php?title=Ultrasound_SWS_tech_ctte)
