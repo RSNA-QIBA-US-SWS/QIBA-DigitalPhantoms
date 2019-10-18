@@ -60,7 +60,7 @@ manufacturers.
 ## Future Efforts
 * Ultrasonic tracking configurations and realizations
 
-## Quantitative Imaging Data Warehouse
+## Download Digital Phantom Data
 The raw simulation data for processing is available through the Duke University
 Library Digital Research Data Repository: [QIBA Ultrasound Shear Wave Speed
 Digital Phantoms](https://doi.org/10.7924/r4sj1f98c)
