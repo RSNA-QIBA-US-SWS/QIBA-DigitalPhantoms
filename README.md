@@ -1,7 +1,9 @@
 [![DOI](https://zenodo.org/badge/31222567.svg)](https://zenodo.org/badge/latestdoi/31222567)
 
 # QIBA-DigitalPhantoms
-[RSNA QIBA Digital Phantom Studies](http://qibawiki.rsna.org/index.php?title=Ultrasound_SWS_tech_ctte)
+RSNA QIBA wiki overview of [US SWS Digital Phantom Studies](http://qibawiki.rsna.org/index.php?title=Ultrasound_SWS_tech_ctte)
+
+Related publication to cite: Palmeri ML, Qiang B, Chen S, Urban M. "[Guidelines for Finite-Element Modeling of Acoustic Radiation Force-Induced Shear Wave Propagation in Tissue-Mimicking Media](https://doi.org/10.1109/TUFFC.2016.2641299)," IEEE TUFFC, 64(1):78-92, 2016.
 
 This repository contains the parameters and simulation configuration files used
 for the digital phantom datasets that will be circulated to all of the
